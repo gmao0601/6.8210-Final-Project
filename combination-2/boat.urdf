@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<robot name="SailboatModel">
+    <link name="base">
+
+        <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="1" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" />
+            <geometry>
+            <box size="1 .4 .2" />
+            </geometry>
+            <material>
+            <color rgba="1 0 1 1" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="plane_motion" type="planar">
+        <parent link="world" />
+        <child link="base" />
+        <axis xyz="1 0 0" />
+    </joint>
+
+    <transmission type="SimpleTransmission" name="base_force">
+        <actuator name="force" />
+        <joint name="plane_motion" />
+    </transmission>
+
+</robot>
+
+
+
+Daniella Rus
